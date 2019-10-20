@@ -1,19 +1,22 @@
 // DEPENDENCIES
 var express = require("express");
-var path = require("path");
+var methodOverride = require("method-override");
+var bodyParser = require("body-parser");
+var exphbs = require("express-handlebars");
 
 // EXPRESS CONFIG
 var app = express();
-var PORT = process.env.PORT || 3090;
+var PORT = process.env.PORT || 3100;
 
 // MIDDLEWARE
-app.use(express.static(path.join(__dirname, "app/"), {maxAge: 3456700000})); 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public/"), {maxAge: 3456700000})); 
 app.use(express.json());
+app.engine("handlebars", exphbs({defaultLayout: "main"}));
+app.set("view engine", "handlebars");
+
 
 // ROUTES
-require("./app/routing/apiRoutes.js")(app);
-require("./app/routing/htmlRoutes.js")(app);
+require("./controllers/burgers_controller.js")(app);
 
 // STARTING THE SERVER
 app.listen(PORT, function() {
