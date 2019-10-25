@@ -1,7 +1,6 @@
-// Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
 
-    // Add a new burger.
+    // Call to add a burguer
     $(".create-form").on("submit", function(event) {
         event.preventDefault();
 
@@ -15,15 +14,14 @@ $(function() {
             type: "POST",
             data: newBurger
         }).then(function() {
-            console.log("Added new burger");
             // Reload the page to get the updated burger list.
             location.reload();
         });
     });
 
-    $(".eatBurgerBtn").on("click", function(event) {
+    $(".eatburger").on("click", function(event) {
         event.preventDefault();
-
+        
         var id = $(this).data("id");
         var devouredState = {
             devoured: 1
@@ -34,21 +32,8 @@ $(function() {
             type: "PUT",
             data: devouredState
         }).then(function() {
-            console.log("Burger devoured");
+            // Reload the page to get the updated burger list.
             location.reload();
         });
     });
-
-    $(".removeBurgerBtn").on("click", function(event) {
-        event.preventDefault();
-
-        var id = $(this).data("id");
-
-        // Send the DELETE request.
-        $.ajax({
-            type: "DELETE",
-            url: "/api/burgers/" + id
-        }).then(location.reload());
-    });
-
 })

@@ -23,12 +23,6 @@ var burger = {
         });
     },
     
-    // Delete a burger from the db.
-    deleteOne: function(condition, cb) {
-        orm.deleteOne("burgers", condition, function(res) {
-            cb(res);
-        });
-    }
 };
 
 // Export at the end of the burger.js file.

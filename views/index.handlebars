@@ -1,17 +1,13 @@
 <div class="container">
 
-    <div class="jumbotron row display-inline-block">
-        {{!-- <div class="row">
-            <div class="col-sm-12">
+    <div class="jumbotron row">
+            <div class="col-sm-7">
                 <h1 id="color-override">Quick</h1>
                 <h1 id="color-override">Burger</h1>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4"><span></span></div>
-            <div class="col-sm-4"><span>
+            <div class="col-sm-5 text-center my-auto"><span>
                     <form class="create-form">
-                        <div class="form-group">
+                        <div class="form-group align-items-center d-flex justify-content-center">
                             <label for="newburger" id="color-override">Burgname:</label>
                             <input type="text" id="newburger" name="burger">
                             <button type="submit" class="btn" id="addburger"><span
@@ -20,33 +16,6 @@
                     </form>
                 </span>
             </div>
-            <div class="col-sm-4"><span></span></div>
-        </div> --}}
-        <div class="row text-center h-100 no-gutters">
-            <div class="col-sm-8 text-center my-auto">
-                <div class="card card-block d-flex" style="height: 50px; border: 0px">
-                    <div class="card-body align-items-center d-flex justify-content-center">
-                        <h1 id="color-override">Quick</h1>
-                        <h1 id="color-override">Burger</h1>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-4 text-center my-auto">
-                <div class="card card-block d-flex" style="height: 50px; border: 0px">
-                    <div class="card-body align-items-center d-flex justify-content-center">
-                        <form class="create-form">
-                            <div class="form-group">
-                                <label for="newburger" id="color-override">Burgname:</label>
-                                <input type="text" id="newburger" name="burger">
-                                <button type="submit" class="btn" id="addburger"><span
-                                        class="fas fa-plus-circle fa-lg"></span></button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="row">
@@ -64,7 +33,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-sm-3 text-center my-auto">
                             <div class="card card-block d-flex" style="height: 50px; border: 0px">
                                 <div class="card-body align-items-center d-flex justify-content-center">
@@ -88,20 +56,10 @@
                     {{#each burgers}}
                     {{#if devoured}}
                     <div class="row text-center h-100 no-gutters">
-                        <div class="col-sm-9 text-center my-auto">
+                        <div class="col-sm text-center my-auto">
                             <div class="card card-block d-flex" style="height: 50px; border: 0px">
                                 <div class="card-body align-items-center d-flex justify-content-center">
                                     <p><span><strong>{{this.id}} - {{this.burger_name}} </strong></span></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-3 text-center my-auto">
-                            <div class="card card-block d-flex" style="height: 50px; border: 0px">
-                                <div class="card-body align-items-center d-flex justify-content-center">
-                                    <button type="button" class="removeburger" id="removeBurgerBtn"
-                                        data-id="{{this.id}}" data-newDevoured="{{devour}}"><span
-                                            class="fas fa-minus-circle fa-lg"></span></button>
                                 </div>
                             </div>
                         </div>

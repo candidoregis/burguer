@@ -11,7 +11,7 @@ body {
     margin-top: 10px;
 }
 
-.jumbotron>h1 {
+h1 {
     font-family: 'Faster One', cursive;
     text-align: center;
     font-size: 5em;
