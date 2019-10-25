@@ -1,17 +1,80 @@
 body {
-    width: 75%;
-    margin: 0px auto;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+    background-color: #683700;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.selected-option {
-    margin-bottom: 40px;
+.jumbotron {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url("/assets/img/xtudo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 10px;
 }
 
-img {
-    width: 500px;
-    height: 600px;
-    object-fit: contain;
+.jumbotron>h1 {
+    font-family: 'Faster One', cursive;
+    text-align: center;
+    font-size: 5em;
+}
+
+#newburger {
+    border-radius: 5px;
+    padding: 4px 8px;
+}
+
+#addburger {
+    color: white;
+}
+
+#color-override {
+    color: white;
+}
+
+#leftSign {
+    background-color: #5cb85c;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 6px 12px;
+}
+
+#eatBurgerBtn, #removeBurgerBtn {
+    float: right;
+}
+
+#rightSign {
+    background-color: #f0ad4e;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 6px 12px;
+}
+
+#signBody {
+    background-color: white;
+    border: 0px;
+}
+
+ul {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.btn {
+    padding: 4px 8px;
+    border-radius: 0px;
+}
+
+p {
+    margin: 4px 8px;
+}
+
+.card {
+    padding: 0;
+    border-radius: 0px;
+}
+
+.card-body {
+    padding: 0;
+    border-radius: 0px;
 }

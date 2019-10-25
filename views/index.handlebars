@@ -1,0 +1,117 @@
+<div class="container">
+
+    <div class="jumbotron row display-inline-block">
+        {{!-- <div class="row">
+            <div class="col-sm-12">
+                <h1 id="color-override">Quick</h1>
+                <h1 id="color-override">Burger</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4"><span></span></div>
+            <div class="col-sm-4"><span>
+                    <form class="create-form">
+                        <div class="form-group">
+                            <label for="newburger" id="color-override">Burgname:</label>
+                            <input type="text" id="newburger" name="burger">
+                            <button type="submit" class="btn" id="addburger"><span
+                                    class="fas fa-plus-circle fa-lg"></span></button>
+                        </div>
+                    </form>
+                </span>
+            </div>
+            <div class="col-sm-4"><span></span></div>
+        </div> --}}
+        <div class="row text-center h-100 no-gutters">
+            <div class="col-sm-8 text-center my-auto">
+                <div class="card card-block d-flex" style="height: 50px; border: 0px">
+                    <div class="card-body align-items-center d-flex justify-content-center">
+                        <h1 id="color-override">Quick</h1>
+                        <h1 id="color-override">Burger</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 text-center my-auto">
+                <div class="card card-block d-flex" style="height: 50px; border: 0px">
+                    <div class="card-body align-items-center d-flex justify-content-center">
+                        <form class="create-form">
+                            <div class="form-group">
+                                <label for="newburger" id="color-override">Burgname:</label>
+                                <input type="text" id="newburger" name="burger">
+                                <button type="submit" class="btn" id="addburger"><span
+                                        class="fas fa-plus-circle fa-lg"></span></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="card col-sm-6">
+            <div class="card-heading" id="leftSign"><strong>New Burgers List</strong></div>
+            <div class="card-body" id="signBody">
+                <ul class="list-group list-group-flush ">
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <div class="row text-center h-100 no-gutters">
+                        <div class="col-sm-9 text-center my-auto">
+                            <div class="card card-block d-flex" style="height: 50px; border: 0px">
+                                <div class="card-body align-items-center d-flex justify-content-center">
+                                    <p><span><strong>{{this.id}} - {{this.burger_name}} </strong></span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3 text-center my-auto">
+                            <div class="card card-block d-flex" style="height: 50px; border: 0px">
+                                <div class="card-body align-items-center d-flex justify-content-center">
+                                    <button type="button" class="eatburger" id="eatBurgerBtn" data-id="{{this.id}}"
+                                        data-newDevoured="{{devour}}"><span
+                                            class="fas fa-utensils fa-lg"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <div class="card col-sm-6">
+            <div class="card-heading" id="rightSign"><strong>R.I.P Burgers List</strong></div>
+            <div class="card-body" id="signBody">
+                <ul class="list-group list-group-flush ">
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <div class="row text-center h-100 no-gutters">
+                        <div class="col-sm-9 text-center my-auto">
+                            <div class="card card-block d-flex" style="height: 50px; border: 0px">
+                                <div class="card-body align-items-center d-flex justify-content-center">
+                                    <p><span><strong>{{this.id}} - {{this.burger_name}} </strong></span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3 text-center my-auto">
+                            <div class="card card-block d-flex" style="height: 50px; border: 0px">
+                                <div class="card-body align-items-center d-flex justify-content-center">
+                                    <button type="button" class="removeburger" id="removeBurgerBtn"
+                                        data-id="{{this.id}}" data-newDevoured="{{devour}}"><span
+                                            class="fas fa-minus-circle fa-lg"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
