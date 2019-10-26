@@ -20,6 +20,8 @@ app.set("view engine", "handlebars");
 var routes = require("./controllers/burgers_controller.js");
 app.use(routes);
 
+// write code to create table if it doesn't exist
+
 // STARTING THE SERVER
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
